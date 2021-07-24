@@ -9,7 +9,7 @@ from spacy.matcher import PhraseMatcher
 
 st.set_page_config(layout="wide")
 
-nlp = spacy.load_model("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 st.cache(show_spinner=True, persist=True)
 
