@@ -1,7 +1,6 @@
 streamlit==0.84.1
+spacy==3.0.7
 transformers==4.6.1
 torch==1.9.0
-spacy_streamlit==1.0.0
-spacy==3.0.7
 pymupdf==1.18.15
 Pillow==8.3.1
