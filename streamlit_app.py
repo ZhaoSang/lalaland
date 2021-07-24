@@ -14,7 +14,7 @@ nlp = spacy.load("en_core_web_sm")
 st.cache(show_spinner=True, persist=True)
 
 def load_model():
-    model = AutoModelForQuestionAnswering.from_pretrained("cuad-training/cuad-models/")
+    model = AutoModelForQuestionAnswering.from_pretrained("cuad-training/cuad-models/", force_download=True)
     tokenizer = AutoTokenizer.from_pretrained('cuad-training/cuad-models/', use_fast=False)
     return model, tokenizer
 
@@ -337,7 +337,7 @@ if __name__ == '__main__':
             # run predictions
             try:
                 index = 1
-                prediction = run_prediction(questions[:], contract, 'cuad-training/cuad-models/')
+                prediction = run_prediction(questions[:], contract, model)
                 bar.progress(95)
                 st.cache(show_spinner=True, persist=True)
 
