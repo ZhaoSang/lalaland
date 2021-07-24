@@ -14,7 +14,7 @@ nlp = spacy.load("en_core_web_sm")
 st.cache(show_spinner=True, persist=True)
 
 def load_model():
-    model = AutoModelForQuestionAnswering.from_pretrained("cuad-training/cuad-models/", force_download=True)
+    model = AutoModelForQuestionAnswering.from_pretrained("cuad-training/cuad-models/")
     tokenizer = AutoTokenizer.from_pretrained('cuad-training/cuad-models/', use_fast=False)
     return model, tokenizer
 
