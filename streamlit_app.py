@@ -18,6 +18,8 @@ def load_model():
     tokenizer = AutoTokenizer.from_pretrained('cuad-training/cuad-models/', use_fast=False)
     return model, tokenizer
 
+model, tokenizer = load_model()
+
 
 st.cache(show_spinner=True, persist=True)
 
@@ -326,7 +328,6 @@ if __name__ == '__main__':
             st.subheader("AI powered overall contract review section (returns BLANK if no relevant question is found):")
             st.write("Warning: AI may not be accurate so please exercise your due diligence and care.")
             st.write("\n")
-            model, tokenizer = load_model()
             bar.progress(80)
             st.cache(show_spinner=True, persist=True)
 
