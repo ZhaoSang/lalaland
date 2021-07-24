@@ -4,15 +4,14 @@ import json
 from predict import run_prediction
 import fitz
 from PIL import Image
-import spacy
+import spacy_streamlit
 from spacy.matcher import PhraseMatcher
-
-nlp = spacy.load("en_core_web_sm")
 
 st.set_page_config(layout="wide")
 
-st.cache(show_spinner=True, persist=True)
+nlp = spacy_streamlit.load_model("en_core_web_sm")
 
+st.cache(show_spinner=True, persist=True)
 
 def load_model():
     model = AutoModelForQuestionAnswering.from_pretrained("cuad-training/cuad-models/roberta-base/")
